@@ -1,0 +1,53 @@
+.mezcal-container {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    width: 100%;
+    max-width: 375px; /* iPhone 15 Max screen width */
+    margin: auto;
+    background: #fff;
+    text-align: center;
+  }
+  
+  .mezcal-header {
+    position: relative;
+    background: #000;
+    height: 44px; /* Approximate height of the iPhone status bar */
+  }
+  
+  .notch {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 210px; /* Approximate width of the iPhone notch */
+    height: 30px;
+    background: #000;
+    border-radius: 0 0 20px 20px;
+  }
+  
+  .mezcal-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .mezcal-content {
+    padding: 20px;
+  }
+  
+  .next-button {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    margin-top: 20px;
+    cursor: pointer;
+  }
+  
+  /* This media query is for larger screens */
+  @media (min-width: 768px) {
+    .mezcal-container {
+      max-width: 720px;
+    }
+  }
+  

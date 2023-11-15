@@ -1,0 +1,60 @@
+/* Styles for the video background container */
+.video-background {
+    position: relative;
+    width: 500px;
+    max-width: 1200px;
+    height: 90vh;
+    overflow: hidden;
+  }
+  
+  /* Styles for the video element */
+  .video-background video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Set a lower z-index to place the video in the background */
+  }
+  
+  /* Styles for the content container */
+  .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1; /* Set a higher z-index to place the content on top of the video */
+  }
+  
+  /* Styles for the title */
+  .content .MuiTypography-root {
+    color: white;
+    font-size: 32px;
+    text-align: center;
+  }
+  
+  /* Styles for the "Book" button */
+  .book-button {
+    margin-top: 60px;
+    background: #E8B03C;
+    color: black;
+    font-size: 24px;
+    font-family: 'Agbalumo', sans-serif; /* You can set the desired font family here */
+    font-weight: bold;
+    padding: 10px 32px;
+    border-radius: 30px;
+    margin-left: 10px;
+  }
+  
+  .card-container {
+    
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+  }

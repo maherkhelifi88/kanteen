@@ -1,0 +1,66 @@
+body {
+    background-color: black;
+    margin: 0;
+    margin-left: 25%;
+    align-items: center;
+    width:500px;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .stepper-container {
+    background-color: #333; /* Grey background */
+    border-radius: 30px; /* Rounded corners */
+    padding: 10px; /* Padding around the steps */
+    display: flex; /* Center the steps horizontally */
+    justify-content: center; /* Center the steps horizontally */
+    margin-bottom: 20px; /* Space below the stepper */
+    height: 40px;
+  }
+  
+  .custom-stepper {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    align-items: center;
+    margin: 0;
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  .step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .step-number {
+    width: 30px; /* Adjust as needed */
+    height: 30px; /* Adjust as needed */
+    line-height: 20px;
+    border-radius: 50%;
+    background: grey;
+    color:grey;
+    margin-bottom: 2px;
+    text-align: center;
+  }
+  
+  .step.active .step-number {
+    background: white;
+    color: black;
+  }
+  
+  .step-title {
+    display: none; /* Hide titles, but include if you want to show them */
+  }
+  .step-number::before {
+    content: ''; /* This removes the number from the circle */
+  }
+  .step.active .step-number {
+    background: #ffffff; /* Active step number color */
+    color: rgb(255, 255, 255); /* Text color, not needed anymore */
+  }
+  /* Rest of your styles for Mezcal component */
+  
