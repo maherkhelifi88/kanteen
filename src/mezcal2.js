@@ -7,8 +7,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import mezcal from './mezcal.png'
 import { useNavigate } from 'react-router-dom';
-const steps = ['Step 1', 'Step 2', 'Step 3', 'Step 4', 'Step 5'];
-
+import mezcal1 from './assets/black.png'
 
 const CustomStepper = ({ steps, activeStep }) => {
   return (
@@ -90,6 +89,12 @@ const Mezcal2 = () => {
       
 
       </div>
+      <img src={mezcal1}   style={{ 
+        width: '130px',  
+        height: 'auto',  
+        top: '50px',     
+        left: '50px'    
+    }} />
     </ThemeProvider>
   );
 };

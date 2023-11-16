@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import mezcal from './mezca.jpg'
+import mezcal1 from './assets/black.png'
 import { useNavigate } from 'react-router-dom';
 const steps = ['Step 1', 'Step 2', 'Step 3', 'Step 4', 'Step 5'];
 
@@ -39,7 +40,12 @@ const Mezcal = () => {
 
         <br></br>
         <br></br>
-        <img src={mezcal} />
+        <img src={mezcal}   style={{ 
+        width: '350px',  
+        height: 'auto',  
+        top: '50px',     
+        left: '50px'    
+    }} />
         <br></br>
         <br></br>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -88,6 +94,12 @@ const Mezcal = () => {
         </Typography>
 
       </div>
+      <img src={mezcal1}   style={{ 
+        width: '150px',  
+        height: 'auto',  
+        top: '50px',     
+        left: '50px'    
+    }} />
     </ThemeProvider>
   );
 };

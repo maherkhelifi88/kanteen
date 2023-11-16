@@ -5,9 +5,10 @@ import StepLabel from '@mui/material/StepLabel';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Button from '@mui/material/Button';
-import mezcal from './mezcal.png'
+import mezcal from './assets/black.png'
 import { useNavigate } from 'react-router-dom';
-
+import Box from '@mui/material/Box';
+import './mezcal.css';
 const CustomStepper = ({ steps, activeStep }) => {
   return (
     <div className="stepper-container">
@@ -33,7 +34,7 @@ const Mezcal2 = () => {
 
   return (
     <ThemeProvider theme={createTheme({})}>
-    <div style={{ background: 'black', padding: '20px', color: 'white' }}>
+    <div style={{ background: 'black',  color: 'white' }}>
     <CustomStepper steps={['Step 1', 'Step 2', 'Step 3', 'Step 4', 'Step 5']} activeStep={activeStep} />
 
         <Typography color='white' variant="h3" align="center" style={{ marginTop: '20px', fontFamily: 'Agbalumo', fontWeight: 'bold', fontSize: '32px' }}>
@@ -99,7 +100,12 @@ const Mezcal2 = () => {
           </Button>
 
         </div>
-      
+        <img src={mezcal}   style={{ 
+        width: '370px',  
+        height: '340px',  
+        top: '50px',     
+        left: '50px'    
+    }} />
 
       </div>
     </ThemeProvider>

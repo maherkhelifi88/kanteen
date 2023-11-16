@@ -3,7 +3,7 @@
     position: relative;
     width: 500px;
     max-width: 1200px;
-    height: 90vh;
+    height: 100vh;
     overflow: hidden;
   }
   
@@ -45,16 +45,77 @@
     background: #E8B03C;
     color: black;
     font-size: 24px;
-    font-family: 'Agbalumo', sans-serif; /* You can set the desired font family here */
+    font-family: 'Agbalumo', sans-serif; 
     font-weight: bold;
     padding: 10px 32px;
     border-radius: 30px;
     margin-left: 10px;
   }
   
+  .stepper-containerr {
+    background-color: #333; 
+    border-radius: 30px; 
+    padding: 20px; 
+    display: flex;
+    justify-content: center; 
+    margin-bottom: 20px; 
+    margin-left:10%; 
+    height: 40px;
+    width:350px;
+  }
+  
+  .custom-stepper {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    align-items: center;
+    margin: 0;
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  .step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .step-number {
+    width: 30px; /* Adjust as needed */
+    height: 30px; /* Adjust as needed */
+    line-height: 20px;
+    border-radius: 50%;
+    background: grey;
+    color:grey;
+    margin-bottom: 2px;
+    text-align: center;
+  }
+  
+  .step.active .step-number {
+    background: white;
+    color: black;
+  }
+  
+  .step-title {
+    display: none; /* Hide titles, but include if you want to show them */
+  }
+  .step-number::before {
+    content: ''; /* This removes the number from the circle */
+  }
+  .step.active .step-number {
+    background: #ffffff; /* Active step number color */
+    color: rgb(255, 255, 255); /* Text color, not needed anymore */
+  }
   .card-container {
     
     display: flex;
     justify-content: center;
     margin: 5px;
+  }
+  @media (max-width: 500px) {
+
+
+
+
   }

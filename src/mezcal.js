@@ -34,10 +34,6 @@ const Mezcal = () => {
   return (
     <ThemeProvider theme={createTheme({})}>
       <div style={{ background: 'black', padding: '20px', color: 'white' }}>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
       <CustomStepper steps={['Step 1', 'Step 2', 'Step 3', 'Step 4', 'Step 5']} activeStep={activeStep} />
       
         <Typography variant="h3" align="center" style={{ marginTop: '20px', fontFamily: 'Agbalumo', fontWeight: 'bold', fontSize: '32px' }}>
@@ -73,13 +69,10 @@ const Mezcal = () => {
         <Typography variant="h3" align="left" style={{ marginTop: '20px', fontFamily: 'Agbalumo', fontSize: '24px' }}>
           a beautiful and delicious mezcal experience
         </Typography>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <Button onClick={handleOpen} variant="contained" color="primary" style={{ background: '#E8B03C', color: 'black', marginTop: '20px', fontSize: '24px', padding: '10px 32px', borderRadius: '30px', position: 'absolute', top: '90%', left: '50%', transform: 'translate(-50%, -50%)', }}>
+       <br></br>
+       <br></br>
+       <br></br>
+        <Button onClick={handleOpen} variant="contained" color="primary" style={{ background: '#E8B03C', color: 'black', fontSize: '24px', borderRadius: '30px', position: 'absolute', left: '50%', transform: 'translate(-50%, -50%)', }}>
           Next
         </Button>
       </div>

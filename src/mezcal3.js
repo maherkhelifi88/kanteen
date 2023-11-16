@@ -20,7 +20,7 @@ import './Mezcal3.css';
 
 const CustomStepper = ({ steps, activeStep }) => {
   return (
-    <div className="stepper-container">
+    <div className="stepper-containerr">
       <div className="custom-stepper">
         {steps.map((step, index) => (
           <div key={step} className={`step ${index === activeStep ? 'active' : ''}`}>
@@ -46,6 +46,8 @@ const Mezcal3 = () => {
           <source src={Pablo} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
+        <br></br>
+        <br></br>
         <br></br>
         <CustomStepper steps={['Step 1', 'Step 2', 'Step 3', 'Step 4', 'Step 5']} activeStep={activeStep} />
 
