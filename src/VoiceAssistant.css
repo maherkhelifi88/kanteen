@@ -25,7 +25,7 @@
   transform: translateX(-50%);
   color: white;
   font-size: 60px;
-  font-family: Agbalumo;
+  font-family: sans-serif;
   font-weight: bold;
 }
 .text-container {
@@ -50,14 +50,11 @@
   
   }
   
-  
- 
- 
   .text-container {
     position: center;
     top: 50px;
     height: 40px;
-    width: 50px;
+    width: 60%;
     margin-bottom: 20px;
   }
   .carousel-container {

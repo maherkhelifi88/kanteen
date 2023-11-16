@@ -11,7 +11,7 @@ import mezcal1 from './assets/black.png'
 
 const CustomStepper = ({ steps, activeStep }) => {
   return (
-    <div className="stepper-container">
+    <div className="stepper-containerrr">
       <div className="custom-stepper">
         {steps.map((step, index) => (
           <div key={step} className={`step ${index === activeStep ? 'active' : ''}`}>
@@ -33,7 +33,9 @@ const Mezcal2 = () => {
 
   return (
     <ThemeProvider theme={createTheme({})}>
-    <div style={{ background: '#E8B03C', padding: '20px', color: 'white' , textAlign: 'center' }}>
+       <div style={{ background: '#E8B03C', minHeight: '100vh', minWidth: '50vh', padding: '20px', color: 'white' , textAlign: 'center'}}>
+       <br></br>
+        <br></br>
     <CustomStepper steps={['Step 1', 'Step 2', 'Step 3', 'Step 4', 'Step 5']} activeStep={activeStep} />
 
 

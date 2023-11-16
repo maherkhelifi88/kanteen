@@ -7,12 +7,13 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import mezcal from './mezca.jpg'
 import mezcal1 from './assets/black.png'
+
 import { useNavigate } from 'react-router-dom';
 const steps = ['Step 1', 'Step 2', 'Step 3', 'Step 4', 'Step 5'];
 
 const CustomStepper = ({ steps, activeStep }) => {
   return (
-    <div className="stepper-container">
+    <div className="stepper-containerrr">
       <div className="custom-stepper">
         {steps.map((step, index) => (
           <div key={step} className={`step ${index === activeStep ? 'active' : ''}`}>
@@ -34,23 +35,28 @@ const Mezcal = () => {
 
   return (
     <ThemeProvider theme={createTheme({})}>
-      <div style={{ background: '#E8B03C', padding: '20px', color: 'white' }}>
-      <CustomStepper steps={['Step 1', 'Step 2', 'Step 3', 'Step 4', 'Step 5']} activeStep={activeStep} />
+      <div style={{ background: '#E8B03C', minHeight: '100vh', minWidth: '50vh', padding: '20px', color: 'white' }}>
+        <br></br>
+        <br></br>
 
+        <CustomStepper steps={['Step 1', 'Step 2', 'Step 3', 'Step 4', 'Step 5']} activeStep={activeStep} />
 
         <br></br>
         <br></br>
-        <img src={mezcal}   style={{ 
-        width: '350px',  
-        height: 'auto',  
-        top: '50px',     
-        left: '50px'    
-    }} />
+        <br></br>
+        <br></br>
+        <img src={mezcal}
+          style={{justifyContent: 'center',
+            width: '350px',
+            height: 'auto',
+            display: 'block',  
+            margin: 'auto', 
+          }} />
         <br></br>
         <br></br>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           <Button
-            onClick={handleOpen} 
+            onClick={handleOpen}
             variant="contained"
             color="primary"
             style={{
@@ -58,7 +64,7 @@ const Mezcal = () => {
               color: '#E8B03C',
               fontSize: '24px',
               padding: '10px 32px',
-              fontFamily: 'Agbalumo',
+              fontFamily: 'sans-serif',
               borderRadius: '30px',
               marginRight: '10px',
               fontWeight: 'bold', // Add margin to create space between buttons
@@ -75,7 +81,7 @@ const Mezcal = () => {
             style={{
               background: 'black',
               color: '#E8B03C',
-              fontSize: '24px', fontFamily: 'Agbalumo',
+              fontSize: '24px', fontFamily: 'sans-serif',
               fontWeight: 'bold',
               padding: '10px 32px',
               borderRadius: '30px',
@@ -86,20 +92,15 @@ const Mezcal = () => {
           </Button>
 
         </div>
-        <Typography color='black' variant="h3" align="center" style={{ marginTop: '20px', fontFamily: 'Agbalumo', fontWeight: 'bold', fontSize: '32px' }}>
+        <Typography color='black' variant="h3" align="center" style={{ marginTop: '20px', fontFamily: 'sans-serif', fontWeight: 'bold', fontSize: '32px' }}>
           MESCAL is only made in
         </Typography>
-        <Typography color='black' variant="h3" align="center" style={{ marginTop: '20px', fontFamily: 'Agbalumo', fontWeight: 'bold', fontSize: '32px' }}>
+        <Typography color='black' variant="h3" align="center" style={{ marginTop: '20px', fontFamily: 'sans-serif', fontWeight: 'bold', fontSize: '32px' }}>
           Mexico?
         </Typography>
 
       </div>
-      <img src={mezcal1}   style={{ 
-        width: '150px',  
-        height: 'auto',  
-        top: '50px',     
-        left: '50px'    
-    }} />
+
     </ThemeProvider>
   );
 };

@@ -52,7 +52,7 @@ const Mezcal3 = () => {
         <CustomStepper steps={['Step 1', 'Step 2', 'Step 3', 'Step 4', 'Step 5']} activeStep={activeStep} />
 
 
-        <Typography color='white' variant="h3" align="center" style={{ marginTop: '20px', fontFamily: 'Agbalumo', fontWeight: 'bold', fontSize: '32px', whiteSpace: 'pre-line' }}>
+        <Typography color='white' variant="h3" align="center" style={{ marginTop: '20px', fontFamily: 'sans-serif', fontWeight: 'bold', fontSize: '32px', whiteSpace: 'pre-line' }}>
           {`  Come try our Mezcal
          Drinks!`}
         </Typography>
@@ -126,7 +126,7 @@ const Mezcal3 = () => {
               marginTop: '60px',
               background: '#E8B03C',
               color: 'black',
-              fontSize: '24px', fontFamily: 'Agbalumo',
+              fontSize: '24px', fontFamily: 'sans-serif',
               fontWeight: 'bold',
               padding: '10px 32px',
               borderRadius: '30px',

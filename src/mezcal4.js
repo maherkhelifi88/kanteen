@@ -11,7 +11,7 @@ import Box from '@mui/material/Box';
 import './mezcal.css';
 const CustomStepper = ({ steps, activeStep }) => {
   return (
-    <div className="stepper-container">
+    <div className="stepper-containerrrr">
       <div className="custom-stepper">
         {steps.map((step, index) => (
           <div key={step} className={`step ${index === activeStep ? 'active' : ''}`}>
@@ -37,17 +37,17 @@ const Mezcal2 = () => {
     <div style={{ background: 'black',  color: 'white' }}>
     <CustomStepper steps={['Step 1', 'Step 2', 'Step 3', 'Step 4', 'Step 5']} activeStep={activeStep} />
 
-        <Typography color='white' variant="h3" align="center" style={{ marginTop: '20px', fontFamily: 'Agbalumo', fontWeight: 'bold', fontSize: '32px' }}>
+        <Typography color='white' variant="h3" align="center" style={{ marginTop: '20px', fontFamily: 'sans-serif', fontWeight: 'bold', fontSize: '42px' }}>
           Now back to your 
         </Typography>
-        <Typography color='white' variant="h3" align="center" style={{ marginTop: '20px', fontFamily: 'Agbalumo', fontWeight: 'bold', fontSize: '32px' }}>
+        <Typography color='white' variant="h3" align="center" style={{ marginTop: '20px', fontFamily: 'sans-serif', fontWeight: 'bold', fontSize: '42px' }}>
           weekend plans 
         </Typography>
         <Typography color='#E8B03C' variant="h3" align="center" style={{
           marginTop: '24px',
-          fontFamily: 'Agbalumo',
+          fontFamily: 'sans-serif',
           fontWeight: 'bold',
-          fontSize: '21px',
+          fontSize: '24px',
           whiteSpace: 'pre-line'
         }}>
           {`
@@ -71,7 +71,7 @@ const Mezcal2 = () => {
               color: 'black',
               fontSize: '24px',
               padding: '10px 32px',
-              fontFamily: 'Agbalumo',
+              fontFamily: 'sans-serif',
               borderRadius: '30px',
               marginRight: '10px',
               fontWeight: 'bold', // Add margin to create space between buttons
@@ -89,7 +89,7 @@ const Mezcal2 = () => {
             style={{
               background: '#E8B03C',
               color: 'black',
-              fontSize: '24px', fontFamily: 'Agbalumo',
+              fontSize: '24px', fontFamily: 'sans-serif',
               fontWeight: 'bold',
               padding: '10px 32px',
               borderRadius: '30px',
@@ -100,12 +100,7 @@ const Mezcal2 = () => {
           </Button>
 
         </div>
-        <img src={mezcal}   style={{ 
-        width: '370px',  
-        height: '340px',  
-        top: '50px',     
-        left: '50px'    
-    }} />
+      
 
       </div>
     </ThemeProvider>

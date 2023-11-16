@@ -24,6 +24,30 @@ body {
     margin-bottom: 20px; /* Space below the stepper */
     height: 40px;
   }
+  .stepper-containerrr {
+    background-color: #333; 
+    border-radius: 30px; 
+    padding: 10px;
+    display: flex;
+    justify-content: center; 
+    margin-bottom: 20px; 
+    margin-top: 13px; 
+    margin-left:4%; 
+    height: 40px;
+    width:390px;
+  }
+  .stepper-containerrrr {
+    background-color: #333; 
+    border-radius: 30px; 
+    padding: 10px;
+    display: flex;
+    justify-content: center; 
+    margin-bottom: 80px; 
+    margin-top: -285px; 
+    margin-left:0%; 
+    height: 40px;
+    width:390px;
+  }
   
   .custom-stepper {
     display: flex;
