@@ -14,6 +14,44 @@ const VoiceAssistant = () => {
     ]);
     const [currentSentenceIndex, setCurrentSentenceIndex] = useState(0);
 
+    const speakSentence = (sentence) => {
+        setIsReading(true);
+        const utterance = new SpeechSynthesisUtterance(sentence);
+        const voices = window.speechSynthesis.getVoices();
+        // Find a more human-like voice, if available
+        const humanLikeVoice = voices.find(v => v.lang.includes('en') && v.name.includes('Google')); // For example, Google voices are often more natural-sounding
+        utterance.voice = humanLikeVoice || voices[0]; // Fall back to the first voice if a Google voice isn't available
+        utterance.lang = 'en-US';
+
+        // Set a more natural rate and pitch
+        utterance.rate = 1.2; // Slower rate can sound more natural - adjust as needed
+        utterance.pitch = 0.5; // Standard pitch
+
+        utterance.onboundary = (event) => {
+            if (event.name === 'word') {
+                const word = sentence.substring(event.charIndex, event.charIndex + event.charLength);
+                setCurrentText((prev) => prev + word + ' ');
+            }
+        };
+
+        utterance.onend = () => {
+            if (currentSentenceIndex < sentencesRef.current.length - 1) {
+                setTimeout(() => {
+                    setCurrentText('');
+                    setCurrentSentenceIndex(currentSentenceIndex + 1);
+                }, 500); // Delay between sentences
+            } else {
+                setIsReading(false);
+            }
+        };
+
+        window.speechSynthesis.speak(utterance);
+    };
+    const handleStartReading = () => {
+        if (currentSentenceIndex < sentencesRef.current.length) {
+            speakSentence(sentencesRef.current[currentSentenceIndex]);
+        }
+    };
     useEffect(() => {
         const handleVoicesChanged = () => {
             const voices = window.speechSynthesis.getVoices();
@@ -81,6 +119,12 @@ const VoiceAssistant = () => {
             >
                 Hey!
             </h1>
+            <button
+                onClick={handleStartReading}
+                style={{ opacity: 0, cursor: 'pointer' }}>
+                Start Reading
+            </button>
+
             <div className="text-container">
                 <p className="spoken-text">{currentText}</p>
             </div>
