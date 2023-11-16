@@ -27,18 +27,18 @@ const VoiceAssistant = () => {
                 const humanLikeVoice = voices.find(v => v.lang.includes('en') && v.name.includes('Google')); // For example, Google voices are often more natural-sounding
                 utterance.voice = humanLikeVoice || voices[0]; // Fall back to the first voice if a Google voice isn't available
                 utterance.lang = 'en-US';
-            
+
                 // Set a more natural rate and pitch
                 utterance.rate = 1.2; // Slower rate can sound more natural - adjust as needed
                 utterance.pitch = 0.5; // Standard pitch
-            
+
                 utterance.onboundary = (event) => {
                     if (event.name === 'word') {
                         const word = sentence.substring(event.charIndex, event.charIndex + event.charLength);
                         setCurrentText((prev) => prev + word + ' ');
                     }
                 };
-            
+
                 utterance.onend = () => {
                     if (currentSentenceIndex < sentencesRef.current.length - 1) {
                         setTimeout(() => {
@@ -49,7 +49,7 @@ const VoiceAssistant = () => {
                         setIsReading(false);
                     }
                 };
-            
+
                 window.speechSynthesis.speak(utterance);
             };
 
@@ -74,27 +74,19 @@ const VoiceAssistant = () => {
     }, [currentSentenceIndex]);
 
     return (
-        <div>
+        <div className="assistant-container">
             <h1
-                style={{
-                    position: 'absolute',
-                    top: '20px',
-                    left: '50%',
-                    transform: 'translateX(-50%)',
-                    color: 'white',
-                    fontSize: '60px',
-                    fontFamily: 'Agbalumo',
-                    fontWeight: 'bold',
-                }}
+                className="h1"
+
             >
                 Hey!
             </h1>
             <div className="text-container">
-    <p className="spoken-text">{currentText}</p>
-  </div>
-  <div className="carousel-container">
-    <Carousel />
-  </div>
+                <p className="spoken-text">{currentText}</p>
+            </div>
+            <div className="carousel-container">
+                <Carousel />
+            </div>
         </div>
     );
 };
