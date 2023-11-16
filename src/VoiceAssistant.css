@@ -54,7 +54,7 @@
   
   .spoken-text {
     color: white;
-    margin-top: -10px;
+    margin-top: 10px;
     margin-left: -250px;
     font-size: 1.9rem;
     /* Adjust as needed */
@@ -73,7 +73,7 @@
   }
   .text-container {
     position: center;
-    top: 30px;
+    top: 50px;
     height: 40px;
     width: 50px;
     margin-bottom: 20px;
