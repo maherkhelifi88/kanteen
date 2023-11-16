@@ -24,7 +24,7 @@ const VoiceAssistant = () => {
             let selectedVoice;
 
             
-            const preferredVoiceNames = ["Daniel", "Karen", "Moira", "Tessa", "Tom", "Samantha"];
+            const preferredVoiceNames = [ "Karen", "Moira", "Tessa", "Tom", "Samantha"];
             
             // Try to find a preferred voice
             for (const name of preferredVoiceNames) {
