@@ -17,16 +17,31 @@ const VoiceAssistant = () => {
     const speakSentence = (sentence) => {
         setIsReading(true);
         const utterance = new SpeechSynthesisUtterance(sentence);
-        const voices = window.speechSynthesis.getVoices();
-        // Find a more human-like voice, if available
-        const humanLikeVoice = voices.find(v => v.lang.includes('en') && v.name.includes('Google')); // For example, Google voices are often more natural-sounding
-        utterance.voice = humanLikeVoice || voices[0]; // Fall back to the first voice if a Google voice isn't available
-        utterance.lang = 'en-US';
+
+        // Function to select a voice
+        const selectVoice = () => {
+            const voices = window.speechSynthesis.getVoices();
+            let selectedVoice;
+
+            // If you have a preferred voice, try to find it, otherwise select a default one
+            const preferredVoiceName = "Samantha"; // An example of a voice that is common on iOS
+            selectedVoice = voices.find(voice => voice.name === preferredVoiceName);
+
+            // Fallback to the first English voice if the preferred is not found
+            if (!selectedVoice) {
+                selectedVoice = voices.find(voice => voice.lang.startsWith('en')) || voices[0];
+            }
+
+            return selectedVoice;
+        };
+
+        // Set the voice
+        utterance.voice = selectVoice();
+        utterance.lang = utterance.voice.lang; // Set the lang to match the selected voice
 
         // Set a more natural rate and pitch
-        utterance.rate = 1.2; // Slower rate can sound more natural - adjust as needed
-        utterance.pitch = 0.5; // Standard pitch
-
+        utterance.rate = 1.0; // Adjust as needed
+        utterance.pitch = 1.0; // Adjust as needed
         utterance.onboundary = (event) => {
             if (event.name === 'word') {
                 const word = sentence.substring(event.charIndex, event.charIndex + event.charLength);
@@ -54,49 +69,12 @@ const VoiceAssistant = () => {
     };
     useEffect(() => {
         const handleVoicesChanged = () => {
-            const voices = window.speechSynthesis.getVoices();
-            const voice = voices.find(v => v.lang.includes('en') && !v.default) || voices[0];
-
-            const speakSentence = (sentence) => {
-                setIsReading(true);
-                const utterance = new SpeechSynthesisUtterance(sentence);
-                const voices = window.speechSynthesis.getVoices();
-                // Find a more human-like voice, if available
-                const humanLikeVoice = voices.find(v => v.lang.includes('en') && v.name.includes('Google')); // For example, Google voices are often more natural-sounding
-                utterance.voice = humanLikeVoice || voices[0]; // Fall back to the first voice if a Google voice isn't available
-                utterance.lang = 'en-US';
-
-                // Set a more natural rate and pitch
-                utterance.rate = 1.2; // Slower rate can sound more natural - adjust as needed
-                utterance.pitch = 0.5; // Standard pitch
-
-                utterance.onboundary = (event) => {
-                    if (event.name === 'word') {
-                        const word = sentence.substring(event.charIndex, event.charIndex + event.charLength);
-                        setCurrentText((prev) => prev + word + ' ');
-                    }
-                };
-
-                utterance.onend = () => {
-                    if (currentSentenceIndex < sentencesRef.current.length - 1) {
-                        setTimeout(() => {
-                            setCurrentText('');
-                            setCurrentSentenceIndex(currentSentenceIndex + 1);
-                        }, 500); // Delay between sentences
-                    } else {
-                        setIsReading(false);
-                    }
-                };
-
-                window.speechSynthesis.speak(utterance);
-            };
 
             // Start with the first sentence
             if (currentSentenceIndex < sentencesRef.current.length) {
                 speakSentence(sentencesRef.current[currentSentenceIndex]);
             }
         };
-
         // Ensure we handle voices being loaded
         if (speechSynthesis.getVoices().length > 0) {
             handleVoicesChanged();

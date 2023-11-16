@@ -45,7 +45,7 @@ const Mezcal = () => {
       <div style={{ background: 'black', padding: '20px', color: 'white' }}>
         <CustomStepper steps={['Step 1', 'Step 2', 'Step 3', 'Step 4', 'Step 5']} activeStep={activeStep} />
 
-        <Typography variant="h3" align="center" style={{ fontWeight: 'bold', fontSize: '42px', marginBottom: '10rem', marginTop:'10rem' }}>
+        <Typography variant="h3" align="center" style={{ fontWeight: 'bold', fontSize: '42px', marginBottom: '0rem', marginTop:'5rem' }}>
           Kiss a Mezcal
         </Typography>
 
