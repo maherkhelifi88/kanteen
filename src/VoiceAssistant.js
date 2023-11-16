@@ -23,9 +23,14 @@ const VoiceAssistant = () => {
             const voices = window.speechSynthesis.getVoices();
             let selectedVoice;
 
-            // If you have a preferred voice, try to find it, otherwise select a default one
-            const preferredVoiceName = "Samantha"; // An example of a voice that is common on iOS
-            selectedVoice = voices.find(voice => voice.name === preferredVoiceName);
+            
+            const preferredVoiceNames = ["Daniel", "Karen", "Moira", "Tessa", "Tom", "Samantha"];
+            
+            // Try to find a preferred voice
+            for (const name of preferredVoiceNames) {
+                selectedVoice = voices.find(voice => voice.name === name);
+                if (selectedVoice) break;
+            }
 
             // Fallback to the first English voice if the preferred is not found
             if (!selectedVoice) {
